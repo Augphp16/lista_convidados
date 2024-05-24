@@ -1,5 +1,7 @@
 package br.com.convidados.api.lista_convidados.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +22,9 @@ public class Controller {
         return actionConvidados.save(convidado);
     }
     
-    @GetMapping("/")
-    public String texto () {
-        return "<h1>Olá Mundo</h1>";
+    @GetMapping("/convidados")
+    public List<Convidados> convidados() {
+        return actionConvidados.findAll();
     }
 
 /*
